@@ -2,4 +2,4 @@
 Contains a checklist for creating PCBs
 
 # BGA_Footprints
-Contains datasheets for BGA footprints
+Contains data sheets for BGA footprints

@@ -1,5 +1,5 @@
 # PCB checklist
-This is a checklist for PCB design. I would suggest to read it before starting a new project and a second time before ordering the PCBs. The Automatic assembly sections is highly influenced by the pick, place, podcast (https://www.pickplacepodcast.com/).
+This is a checklist for PCB design. I would suggest to read it before starting a new project and a second time before ordering the PCBs. The (Automatic) assembly sections is highly influenced by the pick, place, podcast (https://www.pickplacepodcast.com/).
 
 ## Schematic
 * Check as many sub-circuits as possible on breadboards
@@ -97,7 +97,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * makes mechanical design easier 
     * makes drawings easier to read
 * check your hole diameters 
-    * square pins needs a hole with a diameter bigger than the diagonal of pin not the width of the pin (Pythagorean theorem) 
+    * square pins needs a hole with a diameter bigger than the diagonal of pin not the width of the pin (Pythagorean theorem) https://www.worthingtonassembly.com/determining-platedthruhole-sizes
     * some pins are intensional bended and need bigger holes
 * do you want solder mask above your vias?
     * free vias can cause problems during soldering
@@ -173,20 +173,33 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * slots and bridges leave nice well defined edges but needs more space
 * if you use slots and bridges, drill holes in the bridges for easier separation
     * recess the holes in a sub circle into the PCB to get a clean edge 
-        * good: https://www.setgmbh.de/en/product/panel-construction
+        * good: https://www.worthingtonassembly.com/blog/2018/6/20/recessing-your-pcb-edge-for-perforated-tabs
+        https://www.setgmbh.de/en/product/panel-construction
         * not so good https://www.altium.com/documentation/sites/default/files/wiki_attachments/294376/Panel3.png
     * you can route test or programming signals to the panel 
 * if you are creating the panel, ask your manufacturer (pcb and assembly) for individual guidelines
 * often mounting holes can be very handy
+* general tips https://www.worthingtonassembly.com/panelization
 
-## Assembly by hand
+## Assembly
+* create a part list (BOM)
+    * most PCB programmes can do that for you but some better than others
+* to prevent tombstone defect, do not place the pads to far away from each other (0402 or smaller)
+    * https://www.worthingtonassembly.com/perfect-0201-footprint
+    * https://www.worthingtonassembly.com/perfect-0402-footprint
+* use green silkscreen 
+    * better for inspection
+    * most PCB manufacturer have the best performance with green solder mask
+* when you order parts you can often upload a *.txt or *.csv file to speed up the process
+    * often it is also possible to choose a specific part number for every component. If you upload your list and choose the designator as customer specific part number, you get the right designator printed at every component
+* cheap plastic connectors can melt during reflow 
+
+### Assembly by hand
 Before assembling the board, the following things should be considered or done:
 * order more parts than needed 
     * the smaller and cheaper the more (resistors, capacitors)
-* create a part list (BOM) and print it, yes on paper
+* print the part list (BOM), yes on paper
     * most PCB programmes can do that for you but some better than others
-* when you order parts you can often upload a *.txt or *.csv file to speed up the process
-    * often it is also possible to choose a specific part number for every component. If you upload your list and choose the designator as customer specific part number, you get the right designator printed at every component 
 ![part list example](pictures/partList.png "Part list")
 * the list should also contain components like connectors, cables, heat sinks, screws, ...
 * check if all components are arrived 
@@ -197,7 +210,7 @@ Before assembling the board, the following things should be considered or done:
     * if you have a very dense board, it could be better to work inside out
 * do not place the 0 ohm resistors which are connecting the sections
 
-## Automatic assembly
+### Automatic assembly
 * talk to the assembly vendor 
     * also in a early design stage
 * order more parts than needed 
@@ -205,16 +218,13 @@ Before assembling the board, the following things should be considered or done:
 * tall components can hide small components next by
     * can be a problem for the automatic optical inspection
 * tolerances can build up if you manufacturing hundreds or thousands of boards, so do not go too close to the limits
-* use green silkscreen 
-    * better for inspection
-    * most PCB manufacturer have the best performance with green solder mask
 * if you can, send them pictures of a assembled board
 * put fiducials on your board
     * at least two better three at different corners of your board
     * a copper point with 1mm diameter and an solder mask opening of 3mm is common
+    * https://www.worthingtonassembly.com/blog/2014/12/29/what-are-fiducials-and-why-are-they-useful
 * you have to provide a part list, assembly drawings, gerber files and a pick and place file
     * the pick and place file have to contain minimum the designators, x and y positions, rotations and the layer
-
 
 ## Turn it on
 * after assembly, check all components

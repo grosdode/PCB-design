@@ -164,6 +164,10 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * if you have large pads and you want to use a stencil put bridges into the past layer to split the pad in smaller sections
     * otherwise the paste scraper can sunk into the big pad and remove paste
 * check your paste layer if paste is only where you want to want paste (test pads, fiducials, ...)
+* use thermal relief to connect your pads to the ground layer
+* if possible keep tracks bigger than 5mil 
+    * the manufacturer can use half oz copper sheets. Some also use them for 4mil tracks but 5mil is saver
+* be aware of chinese new year
 
 
 ## Panels
@@ -180,6 +184,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * if you are creating the panel, ask your manufacturer (pcb and assembly) for individual guidelines
 * often mounting holes can be very handy
 * general tips https://www.worthingtonassembly.com/panelization
+* if tracks are to close to the board edge, they can be damaged during depanelization 
 
 ## Assembly
 * create a part list (BOM)
@@ -225,6 +230,12 @@ Before assembling the board, the following things should be considered or done:
     * https://www.worthingtonassembly.com/blog/2014/12/29/what-are-fiducials-and-why-are-they-useful
 * you have to provide a part list, assembly drawings, gerber files and a pick and place file
     * the pick and place file have to contain minimum the designators, x and y positions, rotations and the layer
+* do not place smd parts next to THT solder joints, at least 2mm better 5mm
+    * otherwise selective soldering is only possible with glued smd parts
+* to avoid solder bridges while selective or wave solder the protruding leads should be short
+* do not place components next to the board edge
+    * min 1mm better 4mm than the PCBs needs no extra panel/frame for clamping during the assembly process.
+* if connectors protrude pass the board edge, mark them on the silkscreen also above the board edge
 
 ## Turn it on
 * after assembly, check all components

@@ -167,6 +167,8 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * use thermal relief to connect your pads to the ground layer
 * if possible keep tracks bigger than 5mil 
     * the manufacturer can use half oz copper sheets. Some also use them for 4mil tracks but 5mil is saver
+* do not put copper right to the board edge
+    * the router to cut out the PCBs dulls much quicker if it has to cut through copper
 * be aware of chinese new year
 
 
@@ -233,9 +235,9 @@ Before assembling the board, the following things should be considered or done:
 * do not place smd parts next to THT solder joints, at least 2mm better 5mm
     * otherwise selective soldering is only possible with glued smd parts
 * to avoid solder bridges while selective or wave solder the protruding leads should be short
-* do not place components next to the board edge
-    * min 1mm better 4mm than the PCBs needs no extra panel/frame for clamping during the assembly process.
 * if connectors protrude pass the board edge, mark them on the silkscreen also above the board edge
+* antistatic does not me something is ESD protected
+* just because you can produce 10-50 boards doesn't mean you can 1000
 
 ## Turn it on
 * after assembly, check all components

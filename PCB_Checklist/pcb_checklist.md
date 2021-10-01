@@ -238,6 +238,12 @@ Before assembling the board, the following things should be considered or done:
 * if connectors protrude pass the board edge, mark them on the silkscreen also above the board edge
 * antistatic does not me something is ESD protected
 * just because you can produce 10-50 boards doesn't mean you can 1000
+* Be careful some tolerances are given asymmetrically, e.g. 1mm +0.1 -0
+* if you send stuff to someone put notes in/on the package
+    * who is the sender, whats inside, whats the purpose (repair, return, parts, ...)
+* if you send stuff to someone write them a mail with the tracking information
+* high density boards may need cleaning, even if No-Clean flux was used
+    * flux residues and other contaminants can cause electrochemical migration
 
 ## Turn it on
 * after assembly, check all components

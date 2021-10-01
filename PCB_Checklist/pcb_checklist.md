@@ -4,8 +4,10 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 ## Schematic
 * Check as many sub-circuits as possible on breadboards
 * insert test points between sub-circuits or at interesting / critical locations
-    * THT test points makes it easy to hook on the oscilloscope (e.g. keystone 5001)
-    * smd test points (just a smd pad) can be much smaller, a via in the pad gives additional grip for a probe
+    * test points makes it easy to hook on the oscilloscope 
+    * for prototypes, THT test points may be easier (e.g. keystone 5001)
+    * smd test points are much better for production that SMD test points (eg. TE RCT-0C)
+    * just a smd pad can also be a test point, a via in the pad gives additional grip for a probe
     * test points can later be useful for automatic tests
 * use signal LEDs (mostly for prototyping stage)
     * voltage X is OK, microcontroller has pass setup routine, ...
@@ -159,8 +161,9 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * tracks with high currents needs big vias or several
 * increase the pads far enough to reach them with a soldering tip (mostly for prototyping stage)
     * QFN parts, ...
-* if possible use THT connectors if the user have to use them 
-    * pads from smd components can easily rip of 
+* if possible use THT or hybrid connectors if the user have to use them often 
+    * pads from smd components can rip of 
+    * use SMD connectors everywhere else, cheaper and more reliable solder joints
 * if you have large pads and you want to use a stencil put bridges into the past layer to split the pad in smaller sections
     * otherwise the paste scraper can sunk into the big pad and remove paste
 * check your paste layer if paste is only where you want to want paste (test pads, fiducials, ...)
@@ -170,6 +173,9 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * do not put copper right to the board edge
     * the router to cut out the PCBs dulls much quicker if it has to cut through copper
 * be aware of chinese new year
+* to prevent tombstone defect, do not place the pads to far away from each other (0402 or smaller)
+    * https://www.worthingtonassembly.com/perfect-0201-footprint
+    * https://www.worthingtonassembly.com/perfect-0402-footprint
 
 
 ## Panels
@@ -191,9 +197,6 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 ## Assembly
 * create a part list (BOM)
     * most PCB programmes can do that for you but some better than others
-* to prevent tombstone defect, do not place the pads to far away from each other (0402 or smaller)
-    * https://www.worthingtonassembly.com/perfect-0201-footprint
-    * https://www.worthingtonassembly.com/perfect-0402-footprint
 * use green silkscreen 
     * better for inspection
     * most PCB manufacturer have the best performance with green solder mask
@@ -244,6 +247,12 @@ Before assembling the board, the following things should be considered or done:
 * if you send stuff to someone write them a mail with the tracking information
 * high density boards may need cleaning, even if No-Clean flux was used
     * flux residues and other contaminants can cause electrochemical migration
+* do not use THT test points unless you have a good reason
+    * Harwin - S2761-46R, Keystone - 5019, KOA Speer - RCUCTE 
+    * https://www.pickplacepodcast.com/episodes/ep27-when-to-use-through-hole-vs-surface-mount-components
+* if a part is available in different packages and it is possible, make the layout in a way that could place either.
+    * if the part is only available in one of the packages, you can still produce the board
+
 
 ## Turn it on
 * after assembly, check all components

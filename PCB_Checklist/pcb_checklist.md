@@ -176,7 +176,10 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * to prevent tombstone defect, do not place the pads to far away from each other (0402 or smaller)
     * https://www.worthingtonassembly.com/perfect-0201-footprint
     * https://www.worthingtonassembly.com/perfect-0402-footprint
-
+* be nice and put the file format as a comment in your auto generated NC drill files e.g.
+    * ;FILE_FORMAT=4:4 Millimeter
+    * ;FILE_FORMAT=2:5 Inches
+* be even nicer and use Gerber X2    
 
 ## Panels
 * when creating a panel keep track of the mechanical stiffness for handling the panels

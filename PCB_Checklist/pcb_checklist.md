@@ -6,7 +6,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * insert test points between sub-circuits or at interesting / critical locations
     * test points makes it easy to hook on the oscilloscope 
     * for prototypes, THT test points may be easier (e.g. keystone 5001)
-    * smd test points are much better for production that SMD test points (eg. TE RCT-0C)
+    * SMD test points are much better for production than THT test points (eg. TE RCT-0C)
     * just a smd pad can also be a test point, a via in the pad gives additional grip for a probe
     * test points can later be useful for automatic tests
 * use signal LEDs (mostly for prototyping stage)
@@ -71,7 +71,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * use clear names 3V3_1 &rarr; 3V3_analog
 * use a potentiometer if the precise value is not known yet (mostly for prototyping stage)
 * check if the part numbers are correct 
-    * if want to build only a view check if the order number belongs to single quantity parts instead of reels
+    * if you want to build only a view check if the order number belongs to single quantity parts instead of reels
 * check if all parts are available and in stock
 * check the Errata section of the data sheets
 * keep the number of different bill of material items small 
@@ -93,7 +93,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * ...
 * run the DRC before generating the fabrication data
 * use easy values for board dimensions 100mm instead of 98.95231651313513mm
-* place connectors first and at place where you can reach them easily 
+* place connectors first and at places where you can reach them easily 
 * place mounting holes 
 * place all components at a corse grid (1mm / 1.27mm), especially connectors and mounting holes
     * makes mechanical design easier 
@@ -134,7 +134,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * keep switching regulators far away from analog parts
 * all tracks between switching elements and coils (capacitor) are very short and wide, read the data sheet!
     * also the GND connections!
-* label connectors and test point, even at the bottom layer is better than no labels (silkscreen)
+* label connectors and test points, even at the bottom layer is better than no labels (silkscreen)
 * place capacitors and filters close to the respective components
 * leave a bit room for rework next to critical parts
 * check if all ICs are connected to power and ground (if needed)
@@ -180,6 +180,8 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * ;FILE_FORMAT=4:4 Millimeter
     * ;FILE_FORMAT=2:5 Inches
 * be even nicer and use Gerber X2    
+* be aware of minimum lot charge
+    * 1 piece 10€, 2 pieces 10€, 5 pieces 10€, 11 pieces 11€
 
 ## Panels
 * when creating a panel keep track of the mechanical stiffness for handling the panels
@@ -242,7 +244,7 @@ Before assembling the board, the following things should be considered or done:
     * otherwise selective soldering is only possible with glued smd parts
 * to avoid solder bridges while selective or wave solder the protruding leads should be short
 * if connectors protrude pass the board edge, mark them on the silkscreen also above the board edge
-* antistatic does not me something is ESD protected
+* antistatic does not mean something is ESD protected
 * just because you can produce 10-50 boards doesn't mean you can 1000
 * Be careful some tolerances are given asymmetrically, e.g. 1mm +0.1 -0
 * if you send stuff to someone put notes in/on the package

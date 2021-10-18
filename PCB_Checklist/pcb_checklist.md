@@ -73,7 +73,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * use clear names 3V3_1 &rarr; 3V3_analog
 * use a potentiometer if the precise value is not known yet (mostly for prototyping stage)
 * check if the part numbers are correct 
-    * if want to build only a few, check if the order number belongs to single quantity parts instead of reels
+    * if you want to build only a view check if the order number belongs to single quantity parts instead of reels
 * check if all parts are available and in stock
 * check the Errata section of the data sheets
 * keep the number of different bill of material items small 
@@ -142,7 +142,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * keep switching regulators far away from analog parts
 * all tracks between switching elements and coils (capacitor) are very short and wide, read the data sheet!
     * also the GND connections!
-* label connectors and test point, even at the bottom layer is better than no labels (silkscreen)
+* label connectors and test points, even at the bottom layer is better than no labels (silkscreen)
 * place capacitors and filters close to the respective components
 * leave a bit of room for rework next to critical parts, consider tweezer placement
 * check if all ICs are connected to power and ground (if needed)
@@ -189,6 +189,8 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * ;FILE_FORMAT=4:4 Millimeter
     * ;FILE_FORMAT=2:5 Inches
 * be even nicer and use Gerber X2    
+* be aware of minimum lot charge
+    * 1 piece 10€, 2 pieces 10€, 5 pieces 10€, 11 pieces 11€
 
 ## Panels
 * when creating a panel keep track of the mechanical stiffness for handling the panels
@@ -199,7 +201,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * recess the holes in a sub circle into the PCB to get a clean edge 
         * good: https://www.worthingtonassembly.com/blog/2018/6/20/recessing-your-pcb-edge-for-perforated-tabs
         https://www.setgmbh.de/en/product/panel-construction
-        * not so good https://www.altium.com/documentation/sites/default/files/wiki_attachments/294376/Panel3.png
+        * not so good: https://www.altium.com/documentation/sites/default/files/wiki_attachments/294376/Panel3.png
     * you can route test or programming signals to the panel 
 * if you are creating the panel, ask your manufacturer (pcb and assembly) for individual guidelines
 * often mounting holes can be very handy

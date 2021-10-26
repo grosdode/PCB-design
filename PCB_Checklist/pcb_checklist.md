@@ -65,6 +65,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * check the max gate voltage of your FETs / max base current of your BJTs
 * digital busses at ICs sometimes need external components to determine the bus (I2C or SPI) or the address
 * do not use obsolete/NRND parts; make a pass through the BoM and check for this specifically
+    * NRND &rarr; Not Recommended for New Designs
 * use components with tight tolerances for analog circuits
     * voltage divider for output value of a voltage regulator, filters, ...
 * ADCs need an anti aliasing filter close to the input
@@ -73,7 +74,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * use clear names 3V3_1 &rarr; 3V3_analog
 * use a potentiometer if the precise value is not known yet (mostly for prototyping stage)
 * check if the part numbers are correct 
-    * if you want to build only a view check if the order number belongs to single quantity parts instead of reels
+    * if you want to build only a few, check if the order number belongs to single quantity parts instead of reels
 * check if all parts are available and in stock
 * check the Errata section of the data sheets
 * keep the number of different bill of material items small 
@@ -159,7 +160,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * easier to manufacture = low reject rate = you might get extra boards for free 
 * check the current return paths
 * check if the ground plane is wide and has no gaps 
-    * if you have no dedicated ground planem connect the plane on different layers with vias to bridge gaps
+    * if you have no dedicated ground plane connect the plane on different layers with vias to bridge gaps
 * put information's on your board
     * date, version, name, logo, ...
 * think about the text orientation

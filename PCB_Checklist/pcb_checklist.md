@@ -34,6 +34,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * divide the schematic into logical segments with labels (better readability)
     * borders between segments are good places for 0 ohm resistors and/or test points
         * a 0 ohm resistor can also be a solder jumper
+        * be careful, 0 ohm resistors are not 0 ohm at high frequencies 
 * check all labels twice
     * spell check
     * don't confuse Vcc with 3V3 or 3.3V
@@ -42,11 +43,12 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * split analog and digital power supply
     * at least place appropriate filters
 * place ferrite beads or better Pi filter into the supply trace next to the ICs (mostly for prototyping stage)
+    * before the capacitive filtering and again 0 ohm resistors are not 0 ohm at high frequencies
     * ferrite bead: you can start by placing a 0 ohm resistor and easily disconnect the IC by removing it if the IC causes problems, if noise is a problem you can insert the ferrite bead
     * Pi filter: you can start by placing a 0 ohm resistor and not fit the capacitors
         * if space is an issue place the capacitors on the bottom layer, and only install them if really necessary 
 * suppress high-frequency components such as switching regulators 
-* Have a look at the typical application in the data sheet
+* have a look at the typical application in the data sheet
     * if your application isn't mentioned, you may have the wrong part for the job
 * have a look at schematic checklists or additional resources (application notes, ...) for the IC/package
     * some ICs need additional parts for programming or have antenna design guides and so on

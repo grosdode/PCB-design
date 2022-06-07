@@ -6,8 +6,8 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * insert test points between sub-circuits or at interesting / critical locations
     * test points make it easy to hook on the oscilloscope 
     * for prototypes, THT test points may be easier (e.g. keystone 5001)
-    * smd test points are much better for production (eg. TE RCT-0C)
-    * just a smd pad can also be a test point, a via in the pad gives additional grip for a probe
+    * SMD test points are much better for production (eg. TE RCT-0C)
+    * just a SMD pad can also be a test point, a via in the pad gives additional grip for a probe
     * test points can later be useful for automatic tests
 * if you might need to swap easily-confused signals (TX/RX, D+/D-), add pairs of test points so you can cut and bodge later
 * use signal LEDs (mostly for prototyping stage)
@@ -42,11 +42,11 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * internal pullups are sometimes too high for fast signals or long traces
 * split analog and digital power supply
     * at least place appropriate filters
-* place ferrite beads or better Pi filter into the supply trace next to the ICs (mostly for prototyping stage)
-    * before the capacitive filtering and again 0 ohm resistors are not 0 ohm at high frequencies
-    * ferrite bead: you can start by placing a 0 ohm resistor and easily disconnect the IC by removing it if the IC causes problems, if noise is a problem you can insert the ferrite bead
-    * Pi filter: you can start by placing a 0 ohm resistor and not fit the capacitors
-        * if space is an issue place the capacitors on the bottom layer, and only install them if really necessary 
+* do not split ground planes unless you (not the datasheet) know what you are doing!
+* place 0 ohm resistors (solder jumpers) into the supply of the ICs, next to them (mostly for prototyping stage)
+    * so you can "cut off" ICs very easy or measure their current 
+        * do not forget, ESD diodes from IOs can cause current flow if the IC has no supply
+    * be careful, 0 ohm resistors are not 0 ohm at high frequencies 
 * suppress high-frequency components such as switching regulators 
 * have a look at the typical application in the data sheet
     * if your application isn't mentioned, you may have the wrong part for the job
@@ -58,7 +58,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * use a diode or a diode bridge
 * do you need overvoltage or ESD protection?
 * put a fuse in the main power line
-    * smd solder-in, if you are sure not to need them
+    * SMD solder-in, if you are sure not to need them
     * easy changeable if you plan to blow them
     * PPTC self-resetting if external parts could short the power
 * filter your power right when it enters the board
@@ -174,7 +174,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 * increase the pads far enough to reach them with a soldering tip (mostly for prototyping stage)
     * QFN parts, ...
 * if possible use THT or hybrid connectors if the user have to use them often 
-    * pads from smd components can rip of 
+    * pads from SMD components can rip of 
     * use SMD connectors everywhere else, cheaper and more reliable solder joints
 * if you have large pads and you want to use a stencil, put bridges into the paste layer to split the pad in smaller sections
     * otherwise the paste scraper can sink into the big pad and remove paste
@@ -184,7 +184,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * the manufacturer can use half oz copper sheets. Some also use them for 4mil tracks but 5mil is cheaper
 * do not put copper right to the board edge
     * the router to cut out the PCBs dulls much quicker if it has to cut through copper
-* be aware of chinese new year
+* be aware of Chinese new year
 * to prevent tombstone defect, do not place the pads to far away from each other (0402 or smaller)
     * https://www.worthingtonassembly.com/perfect-0201-footprint
     * https://www.worthingtonassembly.com/perfect-0402-footprint
@@ -213,7 +213,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
 
 ## Assembly
 * create a part list (BOM)
-    * most PCB programmes can do that for you but some better than others
+    * most PCB programs can do that for you but some better than others
 * use green silkscreen 
     * better for inspection
     * most PCB manufacturer have the best performance with green solder mask
@@ -227,12 +227,12 @@ Before assembling the board, the following things should be considered or done:
     * the smaller and cheaper the more (resistors, capacitors)
     * if you're likely to install them backwards (SMD LEDs), get even more
 * print the part list (BOM), yes on paper
-    * most PCB programmes can do that for you but some better than others
+    * most PCB programs can do that for you but some better than others
 ![part list example](pictures/partList.png "Part list")
 * the list should also contain components like connectors, cables, heat sinks, screws, ...
 * check if all components have arrived 
 * create a assembly diagram and print it, yes also on paper
-    * most PCB programmes can do that for you but some better than others
+    * most PCB programs can do that for you but some better than others
 ![assembly diagram example](pictures/assembly.png "Assembly diagram")
 * start with the small parts
     * if you have a very dense board, it could be better to work inside out
@@ -251,17 +251,17 @@ Before assembling the board, the following things should be considered or done:
     * at least two better three at different corners of your board
     * a copper point with 1mm diameter and an solder mask opening of 3mm is common
     * https://www.worthingtonassembly.com/blog/2014/12/29/what-are-fiducials-and-why-are-they-useful
-* you have to provide a part list, assembly drawings, gerber files and a pick and place file
+* you have to provide a part list, assembly drawings, Gerber files and a pick and place file
     * the pick and place file have to contain minimum the designators, x and y positions, rotations and the layer
-* do not place smd parts next to THT solder joints, at least 2mm better 5mm
-    * otherwise selective soldering is only possible with glued smd parts
+* do not place SMD parts next to THT solder joints, at least 2mm better 5mm
+    * otherwise selective soldering is only possible with glued SMD parts
 * to avoid solder bridges while selective or wave solder the protruding leads should be short
 * if connectors protrude past the board edge, mark them on the silkscreen also above the board edge
 * antistatic does not mean something is ESD protected
 * just because you can produce 10-50 boards doesn't mean you can 1000
 * Be careful some tolerances are given asymmetrically, e.g. 1mm +0.1 -0
 * if you send stuff to someone put notes in/on the package
-    * who is the sender, whats inside, whats the purpose (repair, return, parts, ...)
+    * who is the sender, what's inside, what's the purpose (repair, return, parts, ...)
 * if you send stuff to someone write them a mail with the tracking information
 * high density boards may need cleaning, even if No-Clean flux was used
     * flux residues and other contaminants can cause electrochemical migration

@@ -14,12 +14,12 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * voltage X is OK, microcontroller has passed setup routine, ...
     * be careful, efficient LEDs can be very bright
     * do not use LEDs without a resistor in series
-* Connect even unused pins to a defined potential (Vcc/GND) unless the datasheet says something else
+* Connect even unused pins to a defined potential (Vcc/GND) unless the data sheet says something else
     * prevent resonant oscillation of unused subparts due to noise
     * sometimes a part is split in subparts, e.g. a dual opAmp. If one is oscillating freely, it can influence the other one
 * check pin assignment of connectors twice
 * check pin assignment of components twice
-* capacitors close to all ICs? (100nF and 10µF unless the data sheet datasheet says something else)
+* capacitors close to all ICs? (100nF and 10µF unless the data sheet says something else)
     * the big one for low frequency noise, the small one for the high frequencies
 * check the max voltage rating of all parts
     * don't forget capacitors, sometimes they have large capacitance drop even at nominal voltage
@@ -42,7 +42,7 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * internal pullups are sometimes too high for fast signals or long traces
 * split analog and digital power supply
     * at least place appropriate filters
-* do not split ground planes unless you (not the datasheet) know what you are doing!
+* do not split ground planes unless you (not the data sheet) know what you are doing!
 * place 0 ohm resistors (solder jumpers) into the supply of the ICs, next to them (mostly for prototyping stage)
     * so you can "cut off" ICs very easy or measure their current 
         * do not forget, ESD diodes from IOs can cause current flow if the IC has no supply
@@ -108,8 +108,9 @@ This is a checklist for PCB design. I would suggest to read it before starting a
     * makes mechanical design easier 
     * makes drawings easier to read
 * check your hole diameters 
-    * square pins needs a hole with a diameter bigger than the diagonal of pin not the width of the pin (Pythagorean theorem) https://www.worthingtonassembly.com/determining-platedthruhole-sizes
-    * hole wall plating thickness also reduces the effective diameter,check with your fab house for details
+    * all holes should be bigger than the diameter of pin (diameter + ~0.2mm)
+        * square pins needs a hole with a diameter bigger than the diagonal of pin not the width of the pin (Pythagorean theorem) https://www.worthingtonassembly.com/determining-platedthruhole-sizes
+    * hole wall plating thickness also reduces the effective diameter, check with your fab house for details
     * some pins are intentionally bent and need bigger holes
 * do you want solder mask above your vias?
     * free vias can cause problems during soldering
